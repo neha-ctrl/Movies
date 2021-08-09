@@ -27,6 +27,8 @@ public class MoviesDao {
 	}
 	
 	
+	
+	
 	public Movies displayByACTName(String actor)throws ClassNotFoundException , SQLException
 	{
 		Movies m=null;
@@ -52,7 +54,7 @@ public class MoviesDao {
 		
 
 	
-	/*public List<Movies> displayAll() throws ClassNotFoundException,SQLException
+	public List<Movies> displayAll() throws ClassNotFoundException,SQLException
 	{
 		List<Movies> list=new ArrayList<>();
 		Class.forName("com.mysql.jdbc.Driver");
@@ -74,7 +76,7 @@ public class MoviesDao {
 		}
 		return list;
 	}
-*/
+
 }
 
 
