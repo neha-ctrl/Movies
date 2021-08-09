@@ -7,6 +7,7 @@ public class App
 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException 
     {
+	    //to insert a data in movies table
      	MoviesDao sd=new MoviesDao();
         Movies m=new Movies();
         m.setname("URI");
@@ -22,7 +23,8 @@ public class App
       
   
    
-   try {
+	    //to display all rows from movies
+             try {
 		sd.displayAll().forEach(m->{System.out.println(m);});
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
@@ -30,6 +32,8 @@ public class App
 		}
     
     
+	    
+	    //to display by actor name
 	 Movies m = sd.displayByACTName("Salman");
 	 System.out.println(m);
 }
