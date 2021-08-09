@@ -29,30 +29,6 @@ public class MoviesDao {
 	
 	
 	
-	public Movies displayByACTName(String actor)throws ClassNotFoundException , SQLException
-	{
-		Movies m=null;
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
-		String sql="Select * from Movies where actor="+actor;
-		Statement st=con.createStatement();
-		ResultSet rs= st.executeQuery(sql);
-		while(rs.next());
-		{
-			m=new Movies();
-			m.setname(rs.getString(1));
-			m.setactor(rs.getString(2));
-			m.setActress(rs.getString(3));
-			m.setDirector(rs.getString(4));
-			m.setyearofrelease(rs.getInt(5));
-
-
-		}
-		return m;
-	}
-
-		
-
 	
 	public List<Movies> displayAll() throws ClassNotFoundException,SQLException
 	{
@@ -76,7 +52,34 @@ public class MoviesDao {
 		}
 		return list;
 	}
+	
+	
+	
+	
 
+	public Movies displayByACTName(String actor)throws ClassNotFoundException , SQLException
+	{
+		Movies m=null;
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
+		String sql="Select * from Movies where actor="+actor;
+		Statement st=con.createStatement();
+		ResultSet rs= st.executeQuery(sql);
+		while(rs.next());
+		{
+			m=new Movies();
+			m.setname(rs.getString(1));
+			m.setactor(rs.getString(2));
+			m.setActress(rs.getString(3));
+			m.setDirector(rs.getString(4));
+			m.setyearofrelease(rs.getInt(5));
+
+
+		}
+		return m;
+	}}
+}
+	
 }
 
 
@@ -87,4 +90,15 @@ public class MoviesDao {
 	
 	
 	
+	
+	
+	
+	
+
+	
+
+	
+
+		
+
 	
